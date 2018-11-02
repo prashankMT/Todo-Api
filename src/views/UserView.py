@@ -1,7 +1,7 @@
 from flask import request, jsonify, make_response, Blueprint, Response, json
-from ..shared.Authentication import Auth
-from ..model.UserModel import User
-from ..model.TodoModel import Todo
+from src.shared.Authentication import Auth
+from src.model.UserModel import User
+from src.model.TodoModel import Todo
 user_api = Blueprint('users', __name__)
 
 

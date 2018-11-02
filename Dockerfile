@@ -1,22 +1,15 @@
-#
-# TODO Flask App Dockerfile
-#
-#
+FROM ubuntu:latest
+MAINTAINER Shashank Gupta "shashank31mar@gmail.com"
 
-# Pull base image.
-#FROM centos:7.0.1406
+RUN apt-get update \
+  && apt-get install -y python3-pip python3-dev \
+  && cd /usr/local/bin \
+  && ln -s /usr/bin/python3 python \
+  && pip3 install --upgrade pip
 
-FROM python:3.7
-
-# Build commands
-RUN mkdir /opt/todo
-WORKDIR /opt/todo
-ADD requirements.txt /opt/todo/
+COPY . /app
+WORKDIR /app
 RUN pip install -r requirements.txt
-ADD . /opt/todo
-EXPOSE 5000
-# Define working directory.
-#WORKDIR /opt/todo
-ENTRYPOINT ["python", "run.py"]
-# Define default command.
-# CMD ["python", "manage.py", "runserver"]
+
+ENTRYPOINT ["python3"]
+CMD ["run.py"]

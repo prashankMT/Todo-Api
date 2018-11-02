@@ -1,8 +1,8 @@
-from src import db
-import datetime
 import uuid
-from werkzeug.security import generate_password_hash, check_password_hash
+import datetime
+from src.db import db
 from flask import jsonify
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 class User(db.Model):

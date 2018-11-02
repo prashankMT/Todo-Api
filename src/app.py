@@ -1,7 +1,7 @@
 from flask import Flask
-from .config import app_config
-from src import db
-from .views.UserView import user_api as user_blueprint
+from src.config import app_config
+from src.db import db
+from src.views.UserView import user_api as user_blueprint
 
 
 def create_app(env_name):

@@ -1,4 +1,4 @@
-from src import db
+from src.db import db
 import datetime
 from flask import jsonify
 
